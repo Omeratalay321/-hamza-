@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+    background-color: #f4f4f4;
+}
+.oyuncu-alani { /* Ronaldo ve Messi alanlarını yan yana getirmek için */
+    display: inline-block;
+    width: 40%; /* Yüzde olarak ayarlandı */
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    vertical-align: top;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+img { /* Fotoğraflar için */
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #d82b45; /* Kırmızımsı bir renk */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+button:hover {
+    background-color: #a81f33;
+}
+#ronaldo-oy, #messi-oy {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d82b45;
+}
