@@ -2,24 +2,86 @@
 <html>
 <head>
     <title>Gardaşların Oylaması: RONALDO vs MESSI</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        .oyuncu-alani { /* Ronaldo ve Messi alanlarını yan yana getirmek için */
+            display: inline-block;
+            width: 40%; /* Yüzde olarak ayarlandı */
+            margin: 10px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            vertical-align: top;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        img { /* Fotoğraflar için */
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #d82b45; /* Kırmızımsı bir renk */
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #a81f33;
+        }
+        #ronaldo-oy, #messi-oy {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d82b45;
+        }
+    </style>
 </head>
 <body>
     <h1>Kimi Seçiyorsun Gardaş?</h1>
+    <p>Oylamaya katıl ve sonucunu gör!</p>
     
-    <div id="ronaldo-alani">
+    <div class="oyuncu-alani">
         <h2>Cristiano Ronaldo</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/Cristiano_Ronaldo_2018.jpg" alt="Cristiano Ronaldo">
         <button onclick="oyKullan('ronaldo')">Oy Ver!</button>
         <p>Oy Sayısı: <span id="ronaldo-oy">0</span></p>
     </div>
 
-    <div id="messi-alani">
+    <div class="oyuncu-alani">
         <h2>Lionel Messi</h2>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Lionel_Messi_2018.jpg" alt="Lionel Messi">
         <button onclick="oyKullan('messi')">Oy Ver!</button>
         <p>Oy Sayısı: <span id="messi-oy">0</span></p>
     </div>
 
     <script>
-        // Sayma mantığımız buraya gelecek (Senin Python'da öğrendiğin gibi!)
+        // Python'daki sayaçlar gibi, başlangıç oylarını 0 yapıyoruz
+        let ronaldoOylar = 0;
+        let messiOylar = 0;
+
+        // Python'daki if-elif mantığını kullanarak oyları artırıyoruz
+        function oyKullan(oyuncu) {
+            if (oyuncu === 'ronaldo') {
+                ronaldoOylar += 1; // Ronaldo oyunu 1 artır
+                document.getElementById('ronaldo-oy').innerText = ronaldoOylar; // Sayıyı ekranda güncelle
+            } else if (oyuncu === 'messi') {
+                messiOylar += 1; // Messi oyunu 1 artır
+                document.getElementById('messi-oy').innerText = messiOylar; // Sayıyı ekranda güncelle
+            }
+        }
     </script>
 </body>
 </html>
